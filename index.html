@@ -2,20 +2,64 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Personal Website Jakob Buergermeister</title>
-	<link rel="stylesheet" type="text/css" href="website_styles.css">
+	<title>Technical Documentation Page</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<meta charset="UTF-8">
 </head>
 
 <body>
+	<nav id="navbar">
+		<header>Sick Bees</header>
+		<ul>
+			<li><a class="nav-link" href="#Introduction">Introduction</a></li>
+			<li><a class="nav-link" href="#Individual_Based_Modelling">Individual Based Modelling</a></li>
+			<li><a class="nav-link" href="#The_Sick_Bees_Model">The Sick Bees Model</a></li>
+			<li><a class="nav-link" href="#Contact_Graphs">Contact Graphs</a></li>
+			<li><a class="nav-link" href="#Unfolding">Unfolding</a></li>
+		</ul>
+	</nav>
 	<main id="main-doc">
-		<section class="main-section">
-			<h1></h1>
+		<section class="main-section" id="Introduction">
+			<header>Introduction</header>
+			<p>The Sick Bees Model is an Individual Based Model, a type of Agent Based Model where agents have individual traits.</p>
+			<p>The computer simulation was written in Rust.</p>
+			<p>It models the spread of pathogens in wild bee populations.</p>
 		</section>
-		<section class="main-section"></section>
-		<section class="main-section"></section>
-		<section class="main-section"></section>
-		<section class="main-section"></section>
+		<section class="main-section" id="Individual_Based_Modelling">
+			<header>Individual Based Modelling</header>
+			<p>Individual Based Models (IBM) are used to model systems with complex behavior.</p>
+			<p>The interaction of individuals leads to emergent patterns.</p>
+		</section>
+		<section class="main-section" id="The_Sick_Bees_Model">
+			<header>The Sick Bees Model</header>
+			<p>The Sick Bees model is written in Rust. There are several species classes that, e.g. hoverflies:</p>
+			<code>    let mut hoverfly = params.hoverflies[0].clone();
+			</code>
+			<p>The landscape is initialized with flower patches</p>
+			<code>    let mut flower_patch = params.flower_patches[0].clone();
+			</code>
+			The simulation is started using the sample function
+			<code>sample(params, Tick::months(months), Tick::days(1));</code>
+		</section>
+		<section class="main-section" id="Contact_Graphs">
+			<header>Contact Graphs</header>
+			<p>Graphs consist of nodes and edges</p>
+			<code>node</code>
+			<p>Add an edge between to nodes whenever a contact has taken place</p>
+		</section>
+		<section class="main-section" id="Unfolding">
+			<header>Unfolding</header>
+			<p>Calculate the path density of the unfolded accessibility graph</p>
+			<code>unfold</code>
+			<p>Unfolding uses the following algorithm:</p>
+			<ol>
+				<li>Add new nodes from contact graph to accessibility graph</li>
+				<li>Add contact edges to accessibility graph</li>
+				<li>Add path edges between nodes connected by a path of length t</li>
+				<li>Count the number of path edges in the accessibility graph</li>
+				<li>Normalize using the node count squared</li>
+			</ol>
+		</section>
 	</main>
 </body>
